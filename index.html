@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess My Number</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="bg-circle circle1"></div>
+    <!-- <div class="bg-circle circle2"></div> -->
+    <!-- <div class="bg-circle circle3"></div>  -->
+
+    <div class="modal-overlay" id="difficulty-modal">
+        <div class="modal">
+            <div class="modal-icon">
+                <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <h2>Select Difficulty</h2>
+            <p>Choose your challenge level and start guessing the hidden number.</p>
+            <div class="difficulty-options">
+                <button class="diff-btn easy" onclick="startGame('easy')">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>Easy</span>
+                    <small>1 - 15</small>
+                    <small>5 Chances</small>
+                </button>
+                <button class="diff-btn normal" onclick="startGame('normal')">
+                    <i class="fa-solid fa-fire"></i>
+                    <span>Normal</span>
+                    <small>1 - 30</small>
+                    <small>8 Chances</small>
+                </button>
+                <button class="diff-btn hard" onclick="startGame('hard')">
+                    <i class="fa-solid fa-skull"></i>
+                    <span>Hard</span>
+                    <small>1 - 50</small>
+                    <small>10 Chances</small>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-dice"></i>
+                <h1>Guess My Number</h1>
+            </div>
+            <button class="btn" id="again-btn">
+                <i class="fa-solid fa-rotate-right"></i>
+                Again
+            </button>
+        </header>
+
+        <section class="info-bar">
+            <div class="info-card">
+                <i class="fa-solid fa-arrows-left-right"></i>
+                <div>
+                    <p>Range</p>
+                    <strong id="range-text">1 - 20</strong>
+                </div>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-sliders"></i>
+                <div>
+                    <p>Difficulty</p>
+                    <strong id="difficulty-text">Normal</strong>
+                </div>
+            </div>
+            <div class="info-card">
+                <i class="fa-solid fa-trophy"></i>
+                <div>
+                    <p>High Score</p>
+                    <strong id="highscore-val">0</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <h2>Can You Guess It?</h2>
+            <div class="secret-number" id="number-box">?</div>
+        </section>
+
+        <main>
+            <section class="left-panel">
+                <label for="user-guess">Enter Number</label>
+                <input id="user-guess" class="guess-input" type="number" min="1" max="50" placeholder="?"
+                    autocomplete="off">
+                <button id="check-btn" class="btn primary">
+                    <i class="fa-solid fa-play"></i>
+                    Check Guess
+                </button>
+            </section>
+
+            <section class="right-panel">
+                <div class="status-card">
+                    <div class="status-icon">
+                        <i class="fa-solid fa-comment"></i>
+                    </div>
+                    <div>
+                        <p>Status</p>
+                        <h3 id="msg-text">Start Guessing...</h3>
+                    </div>
+                </div>
+                <div class="status-card">
+                    <div class="status-icon heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div>
+                        <p>Remaining Chances</p>
+                        <h3><span id="chances-val">10</span></h3>
+                    </div>
+                </div>
+                <!-- <div class="tips">
+                    <h4><i class="fa-solid fa-lightbulb"></i>Tips</h4>
+                    <ul>
+                        <li>Guess within the selected range.</li>
+                        <li>Lower chances mean a higher challenge.</li>
+                        <li>Press <strong>Enter</strong> to check instantly.</li>
+                        <li>Your best score is saved automatically.</li>
+                    </ul>
+                </div> -->
+            </section>
+        </main>
+
+        <!-- <footer>
+            <p> <i class="fa-solid fa-code"></i> Built with HTML, CSS & JavaScript</p>
+        </footer> -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
